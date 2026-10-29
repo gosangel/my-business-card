@@ -825,27 +825,3 @@ footer > a:last-child {
   }
 }
 
-/* Illustration in the about section. */
-.about-intro {
-  min-width: 0;
-}
-.thinking {
-  margin: 32px 0 0;
-  width: min(100%, 330px);
-  border: 1px solid var(--line);
-  border-radius: 5px;
-  overflow: hidden;
-  box-shadow: 0 16px 45px #8ab7d225;
-}
-.thinking img {
-  display: block;
-  width: 100%;
-  height: auto;
-  filter: saturate(0.65);
-}
-@media (max-width: 600px) {
-  .thinking {
-    width: min(100%, 280px);
-    margin-top: 25px;
-  }
-}
