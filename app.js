@@ -1,14 +1,26 @@
 (() => {
   const reduced = matchMedia("(prefers-reduced-motion: reduce)");
   const items = document.querySelectorAll(".reveal");
+  const reveal = async (element) => {
+    const image = element.querySelector("img");
+    if (image) {
+      try {
+        // Wait for image pixels before starting the shared fade-in animation.
+        await image.decode();
+      } catch {
+        // Keep the section accessible even if the image cannot be decoded.
+      }
+    }
+    element.classList.add("visible");
+  };
   if ("IntersectionObserver" in window) {
     document.documentElement.classList.add("js");
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
             observer.unobserve(entry.target);
+            reveal(entry.target);
           }
         });
       },
