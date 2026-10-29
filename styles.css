@@ -168,6 +168,9 @@ nav span {
   align-items: center;
 }
 .identity img {
+  width: 128px;
+  height: 128px;
+  flex-shrink: 0;
   object-fit: cover;
   border-radius: 50%;
   filter: saturate(0.45);
@@ -664,8 +667,8 @@ footer > a:last-child {
     flex: 1;
   }
   .identity img {
-    width: 51px;
-    height: 51px;
+    width: 96px;
+    height: 96px;
   }
   .identity p {
     font-size: 12px;
